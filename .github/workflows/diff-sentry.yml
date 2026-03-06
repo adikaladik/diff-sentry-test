@@ -1,0 +1,17 @@
+name: Diff Sentry Check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  diff-sentry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: adikaladik/diff-sentry@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          fail-on-high: 'false'
