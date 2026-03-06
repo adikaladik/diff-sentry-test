@@ -18,4 +18,5 @@ jobs:
       - uses: adikaladik/diff-sentry@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          license-key: ${{ secrets.DIFF_SENTRY_KEY }}
           fail-on-high: 'false'
